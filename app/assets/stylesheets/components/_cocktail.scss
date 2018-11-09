@@ -1,0 +1,47 @@
+.main-container {
+  height: 400px;
+  color: white;
+  text-align: center;
+  background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/09/30/10/cocktails.jpg?width=1368&height=912&fit=bounds&format=pjpg&auto=webp&quality=70');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-text {
+}
+
+.content {
+ margin-top: 5px;
+ margin-bottom: 0px;
+
+ background-size: cover;
+ background-repeat: no-repeat;
+text-align: center;
+ color: white;
+ background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://www.secretcitytrails.com/wp-content/uploads/2017/05/P2020132-768x768.jpg');
+}
+
+.content a {
+  color: white;
+  text-align: center;
+
+}
+
+.content ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.main-show {
+  text-align: center;
+}
+.show {
+  text-align: center;
+}
+.show ul {
+
+  list-style-type: none;
+  padding: 0;
+
+}

@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="show">
+    <h1><%= @cocktail.name %></h1>
+
+        <ul>
+          <% @doses.each do |dose| %>
+          <li><%= dose.description %> <%= link_to "delete", dose_path(dose), method: :delete, class: 'btn-danger btn-sm'%></li>
+          <% end %>
+        </ul>
+
+      </div>
+      <%= simple_form_for([@cocktail, @dose]) do |f| %>
+      <div class="form-group">
+        <%= f.input :description %>
+        <%= f.association :ingredient %>
+        <%= f.submit class: ' btn-danger btn-lg' %>
+        <% end %>
+      </div>
+
+
+
+    <%= link_to "Go Back", root_path, class: 'btn btn-primary btn-lg' %>
+
+</div>

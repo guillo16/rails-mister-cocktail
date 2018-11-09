@@ -1,0 +1,18 @@
+
+<div class="main-container">
+  <div class="container-text">
+    <h1>Le Wagon's cocktails</h1>
+    <h4> Awesome beverages </h4>
+    <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-danger btn-lg' %>
+  </div>
+</div>
+
+<div class="content">
+  <ul>
+
+  <% @cocktails.each do |cocktail| %>
+  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+  <% end %>
+  </ul>
+</div>
+
