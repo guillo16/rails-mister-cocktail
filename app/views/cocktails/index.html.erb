@@ -1,26 +1,30 @@
 
-<div class="main-container">
-  <div class="container-text">
-    <h1>Le Wagon's cocktails</h1>
-    <h4> Awesome beverages </h4>
-    <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-danger btn-lg' %>
-  </div>
-</div>
-
-<div class="content">
-  <ul>
-
-  <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
-  <% end %>
-  </ul>
-</div>
-
-<!-- <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://kitt.lewagon.com/placeholder/cities/berlin');">
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://static.standard.co.uk/s3fs-public/thumbnails/image/2016/09/30/10/cocktails.jpg?width=1368&height=912&fit=bounds&format=pjpg&auto=webp&quality=70');">
   <div class="banner-content">
-    <h1>Le Wagon Berlin</h1>
-    <p>Learn to code with us in Berlin</p>
-    <a class="btn btn-primary btn-lg">Start now</a>
-  </div>
+    <h1>Le Wagon's cocktails</h1>
+    <p>Awesome beverages </p>
+    <%= link_to "Create a new cocktail", new_cocktail_path, class: 'btn btn-danger btn-lg' %>
+    </div>
 </div>
- -->
+
+
+<div class="container-fluid" >
+  <div class="row" style="margin-top:10px;">
+    <% @cocktails.each do |cocktail| %>
+
+    <div class="col-xs-12 col-sm-4">
+      <% if cocktail.photo.present? %>
+         <div class="card" style=" margin-top: 10px;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill %>')">
+          <% else %>
+          <div class="card" style=" margin-top: 10px;background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://cdn.diffordsguide.com/contrib/encyclopedia/2018/09/5b9ba69ec34f8.jpg')">
+      <% end %>
+
+        <div class="card-description">
+          <h2><li><%= link_to cocktail.name, cocktail_path(cocktail) %></li></h2>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+
+</div>
